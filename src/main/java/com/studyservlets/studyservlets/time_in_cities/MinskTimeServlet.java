@@ -14,6 +14,6 @@ public class MinskTimeServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         ZoneId minskZone = ZoneId.of("Europe/Minsk");
-        PrintTime.printTime(minskZone, resp, "Минск");
+        PrintTimeFragment.printTime(minskZone, resp, "Минск");
     }
 }

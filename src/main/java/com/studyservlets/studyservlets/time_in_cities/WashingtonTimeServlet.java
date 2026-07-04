@@ -14,6 +14,6 @@ public class WashingtonTimeServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         ZoneId washingtonZone = ZoneId.of("America/New_York");
-        PrintTime.printTime(washingtonZone, resp, "Вашингтон");
+        PrintTimeFragment.printTime(washingtonZone, resp, "Вашингтон");
     }
 }

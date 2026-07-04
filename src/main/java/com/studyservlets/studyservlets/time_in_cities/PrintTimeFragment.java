@@ -6,7 +6,7 @@ import util.DateTimeUtil;
 import java.io.IOException;
 import java.time.ZoneId;
 
-final class PrintTime {
+final class PrintTimeFragment {
 
     static void printTime(ZoneId zoneId, HttpServletResponse resp, String cityName) throws IOException {
 //        Для отображения кириллицы в HttpServletResponse
