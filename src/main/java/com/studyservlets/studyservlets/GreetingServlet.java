@@ -14,7 +14,7 @@ import java.io.IOException;
 @WebServlet(urlPatterns = {"/greeting", "/hello"})
 public class GreetingServlet extends HttpServlet {
 
-    @Override // Этот метод обрабатывает GET-запрос для ручки http://localhost:8081/greeting?name=Denis&age=22
+    @Override // Этот метод обрабатывает GET-запрос по адресу http://localhost:8081/greeting?name=Denis&age=22
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         String name = req.getParameter("name");
         String age = req.getParameter("age");
