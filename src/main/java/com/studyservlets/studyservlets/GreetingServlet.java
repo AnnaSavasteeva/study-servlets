@@ -10,11 +10,13 @@ import java.io.IOException;
 // Этот сервлет обрабатывает одинаково несколько запросов:
 - когда в браузер вводится http://localhost:8081/greeting
 - когда в браузер вводится http://localhost:8081/hello
+Еще можно сказать, что данный сервлет работает по такому-то пути: http://localhost:8081/greeting
  */
 @WebServlet(urlPatterns = {"/greeting", "/hello"})
 public class GreetingServlet extends HttpServlet {
 
-    @Override // Этот метод обрабатывает GET-запрос по адресу http://localhost:8081/greeting?name=Denis&age=22
+    // Этот метод обрабатывает GET-запрос по адресу http://localhost:8081/greeting?name=Denis&age=22
+    @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         String name = req.getParameter("name");
         String age = req.getParameter("age");

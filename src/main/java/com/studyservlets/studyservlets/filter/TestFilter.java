@@ -23,12 +23,11 @@ public class TestFilter extends HttpFilter {
         System.out.println("Filter 1 called");
 
         String name = req.getParameter("name");
-        if(Objects.isNull(name)) {
+        if (Objects.isNull(name)) {
             res.setStatus(HttpServletResponse.SC_BAD_REQUEST);
             res.getWriter().println("Oooooops, error!");
         } else {
             chain.doFilter(req, res); // без этого сервлет просто не отработает, т.к. цепочка не будет продолжена
         }
-
     }
 }
