@@ -9,14 +9,15 @@ import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
 
-@WebServlet("/test1")
-public class Test1Servlet extends HttpServlet {
+@WebServlet(name = "ServletContext2Servlet", value = "/test2")
+public class ServletContext2Servlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-//        Берем область Servlet Context и КЛАДЕМ в нее данные
+//        Берем область Servlet Context и БЕРЕМ из нее данные по ключу
         ServletContext servletContext = getServletContext();
-        servletContext.setAttribute("message", "Hello, World!");
+        String message = (String) servletContext.getAttribute("message");
+        resp.getWriter().println("message: " + message);
     }
 }
