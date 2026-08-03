@@ -7,7 +7,7 @@ import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
 /*
-// Этот сервлет обрабатывает одинаково несколько запросов:
+Этот сервлет обрабатывает одинаково несколько запросов:
 - когда в браузер вводится http://localhost:8081/greeting
 - когда в браузер вводится http://localhost:8081/hello
 Еще можно сказать, что данный сервлет работает по такому-то пути: http://localhost:8081/greeting
