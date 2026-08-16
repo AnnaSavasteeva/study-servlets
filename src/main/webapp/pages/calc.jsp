@@ -1,17 +1,18 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="jakarta.tags.core"%>
 <html>
     <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Calculator</title>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     </head>
     <body>
+    <jsp:include page="_header.jsp"/>
 
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-4">
                     <form action="/calcjsp" method="post">
-<%-- Бывает, нужно вместе с данными от пользователя отправить какие-то дополнительные данные — это можно сделать через скрытое поле --%>
+<%--                        Бывает, нужно вместе с данными от пользователя отправить какие-то дополнительные
+                            данные — это можно сделать через скрытое поле --%>
                         <input type="hidden" name="version" value="123.4.5">
                         <div class="mb-3">
                             <label for="exampleInputEmail1" class="form-label">Num 1</label>
@@ -23,12 +24,15 @@
                         </div>
                         <button type="submit" class="btn btn-primary w-100">Submit</button>
                     </form>
-                    <h3>Result = ${result}</h3>
+<%--                    В атрибуте test — булево значение:
+                         - если true, то все, что в теге <c:if...>, показывается на странице,
+                         - если false — содержимое тега <c:if...> НЕ выводится --%>
+                    <c:if test="${result != null}">
+                        <h3>Result = ${result}</h3>
+                    </c:if>
                 </div>
             </div>
         </div>
-
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 
     </body>
 </html>

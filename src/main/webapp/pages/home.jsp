@@ -1,10 +1,9 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Hello</title>
+    <title>Home</title>
 </head>
 <body>
     <jsp:include page="_header.jsp"/>
-    <h1>Hello ${name}!</h1>
 </body>
 </html>
