@@ -21,7 +21,7 @@
                         <a class="nav-link active" aria-current="page" href="/">Home</a>
                     </li>
                     <li class="nav-item">
-                        <%-- Ссылка — это GET-запрос, поэтому в соответствующих сервлетах отрабатывают deGet --%>
+                        <%-- Ссылка — это GET-запрос, поэтому в соответствующих сервлетах должен быть deGet, который отдаст соответствующую страницу --%>
                         <a class="nav-link" href="/calcjsp">Calculator</a>
                     </li>
                     <li class="nav-item">
