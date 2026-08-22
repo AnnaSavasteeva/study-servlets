@@ -16,7 +16,12 @@
                     <ul class="list-group">
                             <%--        items — коллекция, массив и т.п.; var — итеративная переменная --%>
                         <c:forEach items="${operations}" var="operation">
-                            <li class="list-group-item">${operation}</li>
+                            <li class="list-group-item">
+<%--                                Отображение самой операции, а также возможность перейти на отдельную страницу по конкретной операции--%>
+                                <a href="/operation/view?id=${operation.id}">
+                                        ${operation.num1} + ${operation.num2} = ${operation.result}
+                                </a>
+                            </li>
                         </c:forEach>
                     </ul>
                 </c:if>

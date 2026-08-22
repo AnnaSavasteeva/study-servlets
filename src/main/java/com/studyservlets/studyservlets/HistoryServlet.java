@@ -12,11 +12,11 @@ import java.util.List;
 @WebServlet("/history")
 public class HistoryServlet extends HttpServlet {
 
-    private final InMemoryStorage storage = new InMemoryStorage();
+    private final InMemoryOperationStorage storage = new InMemoryOperationStorage();
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        List<String> operations = storage.getOperations();
+        List<Operation> operations = storage.getOperations();
         req.setAttribute("operations", operations);
         getServletContext().getRequestDispatcher("/pages/history.jsp").forward(req, resp);
     }
