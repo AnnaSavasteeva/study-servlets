@@ -31,11 +31,7 @@ public class AvatarUploadServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         Part avatar = req.getPart("avatar");
-
-//        Для учебных целей — просто посмотреть, что файл записался:
-        avatar.write("avatar.jpg");
-
-//        Более универсальный и правильный подход: перегнать файл в байты и потом восстановить из байт там, где требуется
+//        Универсальный и правильный подход: перегнать файл в байты и потом восстановить из байт там, где требуется
         InputStream inputStream = avatar.getInputStream();
         byte[] bytes = inputStream.readAllBytes();
         avatars.put(avatar.getSubmittedFileName(), bytes);
