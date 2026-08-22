@@ -28,6 +28,9 @@
                         <a class="nav-link" href="/history">History</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" href="/avatar">Upload avatar</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link disabled" aria-disabled="true">Привет, Гость!</a>
                     </li>
                 </ul>
